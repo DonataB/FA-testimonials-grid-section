@@ -1,0 +1,160 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)
+
+### Neutral
+
+Light gray: hsl(0, 0%, 81%)
+Light grayish blue: hsl(210, 46%, 95%)
+
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+
+## Typography
+
+### Body Copy
+
+- Font size: 13px
+
+### Font
+
+- Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+- Weights: 500, 600 */
+
+@import "normalize.css";
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --Light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: var(--light-grayish-blue);
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "daniel"
+    "jonathan"
+    "jeanette"
+    "patrick"
+    "kira";
+  grid-gap: 30px;
+  width: 80vw;
+  height: 80vh;
+}
+
+.card {
+  border-radius: 10px;
+  color: white;
+  padding: 20px 30px;
+}
+
+.alumni {
+  opacity: 50%;
+}
+
+p {
+  opacity: 70%;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 1.2rem;
+  margin: unset;
+}
+
+.daniels-card {
+  background: var(--moderate-violet) url("../images/bg-pattern-quotation.svg") no-repeat;
+  background-position: right 70px top;
+  grid-area: daniel;
+
+}
+
+.jonathans-card {
+  background-color: var(--very-dark-grayish-blue);
+  grid-area: jonathan;
+}
+
+.jeanettes-card {
+  background-color: white;
+  grid-area: jeanette;
+  color: var(--very-dark-grayish-blue);
+}
+
+.patricks-card {
+  background-color: var(--very-dark-blackish-blue);
+  grid-area: patrick;
+}
+
+.kiras-card {
+  background-color: white;
+  grid-area: kira;
+  color: var(--very-dark-grayish-blue);
+}
+
+img {
+  border-radius: 100%;
+  transform: scale(0.6);
+}
+
+.daniels-card img {
+  border: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+.patricks-card img {
+  border: 4px solid hsla(263, 55%, 52%, 0.5);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+}
+
+
+@media only screen and (min-width: 1440px){
+    
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+          "daniel daniel jonathan kira"
+          "jeanette patrick patrick kira";
+        grid-gap: 30px;
+        width: 77vw;
+        height: 80vh;
+      }
+}
